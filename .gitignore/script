@@ -1,0 +1,26 @@
+<?php
+$username="root";
+$password="password";
+$database="uploads";
+$servername="localhost";
+
+$conn= new mysqli($servername,$username,$password,$database);
+
+if($conn->connect_error)
+{
+	echo "ab";
+	die("connection failed".$conn->connect_error);
+}
+
+$filename="abc";
+$sFileType="exe";
+$sFileSize=10;
+$target_file="localhost/iirs/uploads";
+
+$sql = "INSERT INTO files (filename, filetype,size,filepath) VALUES ($filename,$sFileType,$sFileSize,$target_file)";
+if($conn->query($sql)===TRUE)
+	echo "ab";
+$a=$conn->affected_rows;
+echo $a;
+$conn->close();
+?>
