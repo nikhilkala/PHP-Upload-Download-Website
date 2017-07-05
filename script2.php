@@ -24,8 +24,7 @@ filetype VARCHAR(30) NOT NULL,
 size VARCHAR(50),
 filepath varchar(100)
 )";
-if ($conn->query($sql) === TRUE)
-    echo "ab";
+if ($conn->query($sql) === TRUE);
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["image_file"]["name"]);
 $filename = basename($_FILES["image_file"]["name"]);
